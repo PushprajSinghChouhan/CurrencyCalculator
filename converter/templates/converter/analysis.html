@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Financial Analysis</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-5">Financial Analysis</h1>
+        <form method="post" class="mt-3">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="currency">Currency:</label>
+                <input type="text" id="currency" name="currency" class="form-control autocomplete">
+            </div>
+            <button type="submit" class="btn btn-primary">Analyze</button>
+        </form>
+        <div id="chart" class="mt-3">
+            {% if chart %}
+                <img src="{{ chart }}" alt="Exchange Rate Chart">
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
+

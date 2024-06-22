@@ -1,0 +1,28 @@
+<!-- converter/convert.html -->
+<div>
+    <h2>Currency Conversion</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="amount">Amount</label>
+            <input type="text" class="form-control" id="amount" name="amount" placeholder="Enter amount">
+        </div>
+        <div class="form-group">
+            <label for="source_currency">Source Currency</label>
+            <select class="form-control" id="source_currency" name="source_currency">
+                <option>USD</option>
+                <option>EUR</option>
+                <!-- Add more currencies as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="target_currency">Target Currency</label>
+            <select class="form-control" id="target_currency" name="target_currency">
+                <option>USD</option>
+                <option>EUR</option>
+                <!-- Add more currencies as needed -->
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Convert</button>
+    </form>
+</div>
